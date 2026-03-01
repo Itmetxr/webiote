@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #f7931e;
+    --text-dark: #000000;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-light);
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('540147504_1074422551571621_8525143473858655158_n.jpg') center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.section h2 {
+    text-align: center;
+    margin: 60px auto 40px auto;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px; /* ปรับให้สั้นลงเพื่อความสวยงาม */
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Overlay Layout ตามรูปตัวอย่าง */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-card {
+    width: 850px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.overlay-header {
+    background: var(--primary-color);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
+/* ปรับปรุงโครงสร้าง Overlay Body */
+.overlay-body {
+    padding: 35px;
+    display: flex;         /* แยกรูปกับข้อความเป็น 2 คอลัมน์ */
+    gap: 40px;             /* ระยะห่างระหว่างรูปกับข้อความ */
+    align-items: flex-start;
+}
+
+/* ฝั่งซ้าย: กล่องรูปภาพ */
+.ov-img-container {
+    flex: 0 0 280px;      /* ล็อกความกว้างฝั่งรูป */
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+#ov-sub-name {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    line-height: 1.5;
+}
+/* ฝั่งขวา: รายละเอียดข้อความ */
+.overlay-text {
+    flex: 1;               /* ให้ข้อความกินพื้นที่ที่เหลือ */
+    text-align: left;      /* จัดข้อความชิดซ้ายตามแบบที่ 2 */
+}
+.name-th-large {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.name-en-sub {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+.overlay-text strong {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    border-bottom: 2px solid var(--primary-color);
+    width: fit-content;
+    padding-bottom: 3px;
+}
+
+/* สไตล์รายการแบบมีขีด (Bullet) */
+.overlay-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.overlay-text li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+
+.overlay-text strong {
+    display: block;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #000;
+    border-bottom: 2px solid var(--primary-color);
+    width: fit-content;
+    padding-bottom: 3px;
+}
+/* Grid System */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card {
+    background: #fff; padding: 20px; border-radius: 15px; text-align: center;
+    cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.card:hover { transform: translateY(-5px); border: 2px solid var(--primary-color); }
+.card img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }

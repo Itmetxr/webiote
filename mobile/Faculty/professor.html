@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Faculty IoT</title>
+<link rel="stylesheet" href="professor.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Faculty Member in the Department of<br>IoT and Information Engineering</h1>
+</header>
+
+<section class="section">
+    <h2>คณาจารย์ภาควิชาวิศวกรรมไอโอทีและสารสนเทศ</h2>
+    <div class="grid" id="facultyGrid"></div>
+</section>
+
+<section class="section">
+<h2>บุคลากรภาควิชาวิศวกรรมไอโอทีและสารสนเทศ </h2>
+<div class="grid" id="staffGrid"></div>
+</section>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay">
+    <div class="overlay-card">
+        <div class="overlay-header">
+            <span onclick="closeOverlay()" style="cursor:pointer; color:black; font-weight:bold;">✕</span>
+        </div>
+        <div class="overlay-body">
+            <div class="ov-img-container">
+                <img id="ov-img">
+                <p id="ov-sub-name" style="margin-top:10px; font-weight:bold; font-size:0.9rem;"></p>
+            </div>
+            <div class="overlay-text">
+                <div id="ov-name"></div>
+                <p id="ov-position" style="margin-bottom:5px;"></p>
+                <p id="ov-email" style="margin-bottom:20px;"></p>
+                
+                <div id="ov-edu"></div>
+                <div id="ov-skill"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="professor.java"></script>
+</body>
+</html>
